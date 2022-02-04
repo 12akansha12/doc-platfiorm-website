@@ -4,10 +4,13 @@ view the project status by following steps :
 1. Clone the repo
 2. Come into the directory
 3. Launch terminal and type 
+> npm install
+
+now a folder will be created with name, node modules, then type
 > node app.js
 
-Also you can use nodemon for ease, click <a href="https://www.npmjs.com/package/nodemon">here</a> to download nodemon, 
-once downloaded, go to the terminal, type the below command
+Also you can use nodemon for your ease, click <a href="https://www.npmjs.com/package/nodemon">here</a> to download nodemon, 
+once downloaded, go to the terminal, type the given below command
 > nodemon app.js
 
 4. Go to your broser
