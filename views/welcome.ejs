@@ -11,11 +11,13 @@
 <body>
     <div class="container">
         <div class="top-items">
+            <span>
             <a  href="/sign-in">
                 <button class="signin">Sign In</button>
             </a><a class="item2" href="/sign-up">
                 <button class="signup">Sign Up</button>
             </a>
+            </span>
         </div>
         
         <div class="heading1">
@@ -38,7 +40,7 @@
             <% if(workspaces_list.length === 0) { %>
                 <h3></h3>
             <% } else { %>
-                <h3>You are already signed in to</h3>
+                <h3>You have following workspaces</h3>
                 <% for(var i=0; i<workspaces_list.length; i++) { %>
                     <div class="workspace-list">
                         <div>
