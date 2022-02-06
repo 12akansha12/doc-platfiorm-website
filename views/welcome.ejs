@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/welcome.css">
+    <title>welcome-to-doc-platform</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-items">
+            <a  href="/sign-in">
+                <button class="signin">Sign In</button>
+            </a><a class="item2" href="/sign-up">
+                <button class="signup">Sign Up</button>
+            </a>
+        </div>
+        
+        <div class="heading1">
+            <img src="images/doc-icon.png" width="80px" height="80px" alt="">
+            <h2>Welcome to Doc Platform</h2>
+        </div>
+        <div class="">
+            <h1>Create a new workspace</h1>
+            <form action="/" method="post">
+                <div>
+                    <input type="text" name="new_workspace" placeholder="Enter workspace name" autocomplete="off">
+                </div>
+                <div>
+                    <button type="submit" class="btn-create">CREATE</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- <div style="text-align: center;"> -->
+            <% if(workspaces_list.length === 0) { %>
+                <h3></h3>
+            <% } else { %>
+                <h3>You are already signed in to</h3>
+                <% for(var i=0; i<workspaces_list.length; i++) { %>
+                    <div class="workspace-list">
+                        <div>
+                            <p class="workspace-name"><%= workspaces_list[i] %></p>  
+                        </div>
+                        <div>
+                            <a href=""><button class="workspace-btn">Open</button></a>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>
