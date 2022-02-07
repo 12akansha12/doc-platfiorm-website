@@ -1,147 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<title>signup</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<head>
+	<title>signup</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="/css/style.css" />
 	<!-- <link href="/css/bootstrap.min.css" rel="stylesheet" media="all"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
 	<!-- <link type="css" rel="stylesheet" href="src/node_modules/bootstrap/dist/css/bootstrap.css" crossorigin="anonymous"> -->
-
 </head>
-	<body>
+
+<body>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
-		      	<div class="icon d-flex align-items-center justify-content-center">
-		      		<span class="fa fa-user-o"></span>
-		      	</div>
-		      	<h3 class="text-center mb-4">Sign Up</h3>
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="fa fa-user-o"></span>
+						</div>
+						<h3 class="text-center mb-4">Sign Up</h3>
 						<div action="#" id="loginForm" class="login-form">
-		      		<div class="form-group">
-		      			<input type="text" id="username" class="form-control rounded-left" placeholder="Name" required>
-		      		</div>
-                    <div class="form-group">
-                        <input type="email" id="email" class="form-control rounded-left" placeholder="Email" required>
-                    </div>
-	            <div class="form-group d-flex">
-	              <input type="password" id="password" class="form-control rounded-left" placeholder="Create Password" required>
-	            </div>
-                <div class="form-group d-flex">
-                    <input type="password" class="form-control rounded-left" placeholder="Confirm Password" required>
-                </div>
-	            <div class="form-group">
-	            	<button type="button"  id="signUp" name="signUp" class="form-control btn btn-primary rounded submit px-3">Sign up</button>
-	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-	            		<label class="checkbox-wrap checkbox-primary">Remember Me
-							<input type="checkbox" checked>
-							<span class="checkmark"></span>
-						</label>
+							<div class="form-group">
+								<input type="text" id="username" class="form-control rounded-left" placeholder="Name"
+									required />
+							</div>
+							<div class="form-group">
+								<input type="email" id="email" class="form-control rounded-left" placeholder="Email"
+									required />
+							</div>
+							<div class="form-group d-flex">
+								<input type="password" id="password" class="form-control rounded-left"
+									placeholder="Create Password" required />
+							</div>
+							<div class="form-group d-flex">
+								<input type="password" class="form-control rounded-left" placeholder="Confirm Password"
+									required />
+							</div>
+							<div class="form-group">
+								<button type="button" id="signUp" name="signUp"
+									class="form-control btn btn-primary rounded submit px-3">
+									Sign up
+								</button>
+							</div>
+							<div class="form-group d-md-flex">
+								<div class="w-50">
+									<label class="checkbox-wrap checkbox-primary">Remember Me
+										<input type="checkbox" checked />
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<!-- href="/sign-in" will be load the login.html page, code behind this is written in app.js -->
+									Go to <a href="/sign-in">Sign In</a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="w-50 text-md-right">
-						<!-- href="/sign-in" will be load the login.html page, code behind this is written in app.js -->
-						Go to <a href="/sign-in">Sign In</a>
-					</div>
-	            </div>
-			</div>
-	        </div>
 				</div>
 			</div>
 		</div>
 	</section>
-<!-- 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script> -->
-  <!-- <script src="js/main.js"></script> -->
- 
-<script type="module">
-	// Import the functions you need from the SDKs you need
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-	import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
-	import { getAuth,signInWithRedirect, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
-	// TODO: Add SDKs for Firebase products that you want to use
-	// https://firebase.google.com/docs/web/setup#available-libraries
-  
-	// Your web app's Firebase configuration
-	const firebaseConfig = {
-	  //yout config code
-	apiKey: "AIzaSyAtQLoRJGQFE2pEnsQwRcIHjmHh18uRS3E",
-    authDomain: "doc-platform.firebaseapp.com",
-    databaseURL: "https://doc-platform-default-rtdb.firebaseio.com",
-    projectId: "doc-platform",
-    storageBucket: "doc-platform.appspot.com",
-    messagingSenderId: "891182236330",
-    appId: "1:891182236330:web:1700886bfd8f4fb36fc6d3",
-    measurementId: "G-X9KGTMH6B7"
-  };
-  
-	// Initialize Firebase
-	const app = initializeApp(firebaseConfig);
-	const database = getDatabase(app);
-	const auth = getAuth();
-  
-  signUp.addEventListener('click',(e) => {
-  
-	var email = document.getElementById('email').value;
-	var password = document.getElementById('password').value;
-	var username = document.getElementById('username').value;
-  
-	createUserWithEmailAndPassword(auth, email, password)
-	  .then((userCredential) => {
-	   // Signed in 
-		const user = userCredential.user;
-  
-		set(ref(database, 'users/' + user.uid),{
-			username: username,
-			email: email
-		})
-  
-		alert('user created!');
-		// ...
-	  })
-	  .catch((error) => {
-		const errorCode = error.code;
-		const errorMessage = error.message;
-   
-		if(new String(errorMessage).valueOf() == ("Error (auth/email-already-in-use)."))
-		  window.location.href = 'login.html';
-		  else		alert(errorMessage);
 
-	  // ..
-	  });
-  
-  });
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+		import {
+			getDatabase,
+			set,
+			ref,
+			update,
+		} from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+		import {
+			getAuth,
+			signInWithRedirect,
+			createUserWithEmailAndPassword,
+			signInWithEmailAndPassword,
+			onAuthStateChanged,
+			signOut,
+		} from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
 
-// const user = auth.currentUser;
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     //const uid = user.uid;
-	
-//      //window.location.href = 'login.html';
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			//yout config code
+			apiKey: "AIzaSyAtQLoRJGQFE2pEnsQwRcIHjmHh18uRS3E",
+			authDomain: "doc-platform.firebaseapp.com",
+			databaseURL: "https://doc-platform-default-rtdb.firebaseio.com",
+			projectId: "doc-platform",
+			storageBucket: "doc-platform.appspot.com",
+			messagingSenderId: "891182236330",
+			appId: "1:891182236330:web:1700886bfd8f4fb36fc6d3",
+			measurementId: "G-X9KGTMH6B7",
+		};
 
-//     // ...
-//   } else {
-//     // User is signed out
-//     // ...
-//   }
-// });
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const database = getDatabase(app);
+		const auth = getAuth();
 
-</script>
-  
+		signUp.addEventListener("click", (e) => {
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var username = document.getElementById("username").value;
 
-	</body>
+			createUserWithEmailAndPassword(auth, email, password)
+				.then((userCredential) => {
+					// Signed in
+					const user = userCredential.user;
+
+					set(ref(database, "users/" + user.uid), {
+						username: username,
+						email: email,
+					});
+
+					alert("user created!");
+					// ...
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+
+					if (
+						new String(errorMessage).valueOf() ==
+						"Error (auth/email-already-in-use)."
+					)
+						window.location.href = "login.html";
+					else alert(errorMessage);
+
+					// ..
+				});
+		});
+
+      // const user = auth.currentUser;
+      // onAuthStateChanged(auth, (user) => {
+      //   if (user) {
+      //     // User is signed in, see docs for a list of available properties
+      //     // https://firebase.google.com/docs/reference/js/firebase.User
+      //     //const uid = user.uid;
+
+      //      //window.location.href = 'login.html';
+
+      //     // ...
+      //   } else {
+      //     // User is signed out
+      //     // ...
+      //   }
+      // });
+	</script>
+</body>
+
 </html>
-
