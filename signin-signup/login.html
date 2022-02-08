@@ -120,7 +120,7 @@
 					});
 
 					alert("User loged in!");
-					//window.location.href = '/welcome/welcome.html';
+					window.location.href = '/';
 					// ...
 				})
 				.catch((error) => {
@@ -159,6 +159,8 @@
 		// });
 
 		forgotPass.addEventListener("click", (e) => {
+			//to prevent anchor from refreshing the tab
+			e.preventDefault();
 			const email = document.getElementById("email").value;
 			sendPasswordResetEmail(auth, email)
 				.then(() => {
