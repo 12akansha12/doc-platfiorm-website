@@ -20,18 +20,24 @@
                         <button class="open-btn">Show</button>
                     </li>
             <% } %>
+            
         </div>
 
         <form action="/workspace" method="post" class="form">
-            <button type="submit" class="save-btn" style="float: right">Save</button>
-            <input type="text" name="filename" id="" class="filename" placeholder="Insert title here" required>
-            
-            <textarea class="textarea" name="content" id="" cols="80" rows="50"></textarea>
+            <button type="submit" class="save-btn" style="float: right">Review</button>
+            <div>
+                <label for="input-file"></label><br>             
+               <!-- for adding file name in filename text -->
+             <input type="file" name="input-file" class="choose-btn" id="input-file" onchange="document.getElementById('filename').value = this.value.split('\\').pop().split('/').pop()">
+            </div>
+             <input type="text" name="filename" id="filename" class="filename" placeholder="Insert a title">    
+
+            <textarea class="textarea" name="content" id="content-target" cols="80" rows="50"></textarea>
             
         </form>
     </div>
 
-    
-
 </body>
+
+<script src="js/choosingfile.js"></script>
 </html>
