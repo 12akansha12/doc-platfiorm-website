@@ -1,10 +1,9 @@
 document.getElementById('input-file')
   .addEventListener('change', getFile)
-
+// to select content of files and adding it in text area
 function getFile(event) {
 	const input = event.target
     var x = document.getElementById("input-file");
-    //var txt = "";
 
   if ('files' in input && input.files.length > 0) {
 	  placeFileContent(
@@ -13,7 +12,6 @@ function getFile(event) {
       
     }
  }
- //document.getElementById("filename").innerHTML = txt;
 
 function placeFileContent(target, file) {
 	readFileContent(file).then(content => {
