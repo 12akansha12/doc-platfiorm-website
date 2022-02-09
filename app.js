@@ -10,11 +10,11 @@ var workspaces = [];
 var files = [];
 
 app.get("/sign-in", function(req, res) {
-    res.sendFile(__dirname + "/signin-signup/login.html");
+    res.render("login.ejs");
 });
 
 app.get("/sign-up", function(req, res) {
-    res.sendFile(__dirname + "/signin-signup/signup.html");
+    res.render("signup.ejs");
 });
 app.get("/workspace", function(req, res) {
   res.render("workspace.ejs", {files: files});
