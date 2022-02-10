@@ -51,6 +51,39 @@ signUp.addEventListener("click", (e) => {
             });
 
             alert("user created!");
+
+            async function registerTheUser() {
+                // const email = document.getElementById("email").value;
+                // const password = document.getElementById("password").value;
+                // const username = document.getElementById("name").value;
+                var details = {
+                  'userName': username,
+                  'password': password,
+                  'email': email,
+                };
+        
+                var formBody = [];
+                for (var property in details) {
+                  var encodedKey = encodeURIComponent(property);
+                  var encodedValue = encodeURIComponent(details[property]);
+                  formBody.push(encodedKey + "=" + encodedValue);
+                }
+                formBody = formBody.join("&");
+        
+                const option = {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": 'application/x-www-form-urlencoded;charset=UTF-8',
+                  },
+                  body: formBody
+                }
+        
+        
+                let fetchData = await fetch("/api/register", option).then((res) => res.json());
+                console.log(fetchData);
+              }
+              registerTheUser();
+
         })
         .catch((error) => {
             const errorCode = error.code;

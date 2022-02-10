@@ -12,13 +12,8 @@
 <body>
     <div class="container">
         <div class="top-items">
-            <span>
-                <a href="/sign-in">
-                    <button class="signin">Sign In</button>
-                </a><a class="item2" href="/sign-up">
-                    <button class="signup">Sign Up</button>
-                </a>
-            </span>
+            <img src="images/usericon.png" width="80px" height="80px" alt="usericon">
+            <p><%= useremail %></p>
         </div>
 
         <div class="heading1">
@@ -27,12 +22,12 @@
         </div>
         <div class="">
             <h1>Create a new workspace</h1>
-            <form>
+            <form action="/dashboard" method="post">
                 <div>
                     <input type="text" name="new_workspace" placeholder="Enter workspace name" autocomplete="off">
                 </div>
                 <div>
-                    <a href="sign-in"><button type="button" class="btn-create">CREATE</button></a>
+                    <button type="submit" class="btn-create">CREATE</button>
                 </div>
             </form>
         </div>
@@ -54,6 +49,7 @@
                     </div>
                 <% } %>
         <% } %>
+                            
     </div>
 </body>
 

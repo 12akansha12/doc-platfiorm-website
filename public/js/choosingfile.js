@@ -1,29 +1,58 @@
-document.getElementById('input-file')
-  .addEventListener('change', getFile)
-// to select content of files and adding it in text area
-function getFile(event) {
-	const input = event.target
-    var x = document.getElementById("input-file");
+const inputfile = document.getElementById('input-file');
+inputfile.addEventListener('change', saveFile);
 
-  if ('files' in input && input.files.length > 0) {
-	  placeFileContent(
-      document.getElementById('content-target'),
-      input.files[0])
-      
+function saveFile() {
+  const filepath = document.getElementById('input-file').value;
+  console.log(filepath);
+    let filename = "";
+    for(let i=filepath.length-1; i>=0; i--) {
+        if(filepath[i] >= 'A' && filepath[i] <= 'Z') 
+            filename = filepath[i] + filename;
+        else if(filepath[i] >= 'a' && filepath[i] <= 'z' )
+            filename = filepath[i] + filename;
+        else if(filepath[i]==='.')
+            filename = filepath[i] + filename;
+        else break;
     }
- }
+    console.log(filename);
+    var fr=new FileReader();
+    fr.onload=function(){
+        let filecontent =fr.result;
 
-function placeFileContent(target, file) {
-	readFileContent(file).then(content => {
-  	target.value = content
-  }).catch(error => console.log(error))
+        async function saveFileAndContent() {
+            var details = {
+                'filename': filename,
+                'filecontent': filecontent,
+            };
+
+            var formBody = [];
+            for (var property in details) {
+                var encodedKey = encodeURIComponent(property);
+                var encodedValue = encodeURIComponent(details[property]);
+                formBody.push(encodedKey + "=" + encodedValue);
+            }
+            formBody = formBody.join("&");
+
+            const option = {
+                method: "POST",
+                headers: {
+                    "Content-Type": 'application/x-www-form-urlencoded;charset=UTF-8',
+                },
+                body: formBody
+            }
+
+            let result = await fetch("/api/saveFileAndContent", option).then((res) => res.json());
+            // console.log(result);
+        }
+        saveFileAndContent();
+        window.location.href = "/workspace";
+    }
+    
+    fr.readAsText(this.files[0]);
 }
 
-function readFileContent(file) {
-	const reader = new FileReader()
-  return new Promise((resolve, reject) => {
-    reader.onload = event => resolve(event.target.result)
-    reader.onerror = error => reject(error)
-    reader.readAsText(file)
-  })
-}
+const workspace = document.getElementById('workspace');
+workspace.addEventListener('click', function() {
+    console.log(window.location.href);
+})
+
