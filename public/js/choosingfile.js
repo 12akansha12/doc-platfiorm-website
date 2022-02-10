@@ -55,4 +55,3 @@ const workspace = document.getElementById('workspace');
 workspace.addEventListener('click', function() {
     console.log(window.location.href);
 })
-
