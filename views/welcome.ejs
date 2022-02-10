@@ -36,24 +36,6 @@
                 </div>
             </form>
         </div>
-
-        <% if(workspaces_list.length===0) { %>
-            <h3></h3>
-            <% } else { %>
-                <h3>You have following workspaces</h3>
-                <% for(var i=0; i<workspaces_list.length; i++) { %>
-                    <div class="workspace-list">
-                        <div>
-                            <p class="workspace-name">
-                                <%= workspaces_list[i] %>
-                            </p>
-                        </div>
-                        <div>
-                            <a href="/workspace"><button class="workspace-btn">Open</button></a>
-                        </div>
-                    </div>
-                <% } %>
-        <% } %>
     </div>
 </body>
 

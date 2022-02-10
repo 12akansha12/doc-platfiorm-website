@@ -22,7 +22,7 @@ app.get("/workspace", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  res.render("welcome.ejs", {workspaces_list: workspaces});
+  res.render("welcome.ejs");
 });
 
 app.get("/workspace/:file", function(req, res) {
