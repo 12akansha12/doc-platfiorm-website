@@ -52,15 +52,14 @@ once downloaded, go to the terminal, type the given below command
 4. Go to your browser
 5. Go to http://localhost:3000/
 
-You will see login page here!
 
 ## Tech Stack
 
-- Front End
-HTML(Basic skeleton used in form of EJS),CSS
-- Back-End
+- Front-End : 
+HTML(Basic skeleton used in form of EJS), CSS
+- Back-End : 
 NODEJS, Firebase, Firebase Realtime Database
-- Other tools and platforms: <br>
+- Other tools and platforms : <br>
 i) Used Heroku for CI/CD deployment <br>
 ii) Balsamiq cloud tool to design pages
 
