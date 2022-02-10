@@ -29,11 +29,9 @@ app.get("/workspace/:file", function(req, res) {
   const requestedFile = req.params.file;
   for(let i=0; i<files.length; i++) {
     if(files[i].name === requestedFile) {
-      // console.log(files[i].content);
       res.render("showFile.ejs", {files: files, name: files[i].name, content: files[i].content})
     }
   }
-  // res.render("")
 })
 
 app.get("/dashboard", function(req, res) {
@@ -41,16 +39,12 @@ app.get("/dashboard", function(req, res) {
 })
 
 app.post("/api/register", function(req, res) {
-  // userEmail = req.body.email;
-  // console.log(req.body);
   res.json({status: 'ok'})
 })
 
 app.post("/api/login", function(req, res) {
-  // console.log(req.body.email);
   userEmail = req.body.email;
   res.json({status: 'ok'})
-  // res.redirect("/dashboard");
 })
 
 app.post("/dashboard", function(req, res) {
@@ -72,6 +66,6 @@ app.post("/api/saveFileAndContent", function(req, res) {
 //------------------------------------------/
 
 
-app.listen(3000, function(res, req) {
+app.listen(process.env.PORT || 3000, function(res, req) {
   console.log("Server started on port 3000");
 });
