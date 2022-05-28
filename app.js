@@ -289,7 +289,11 @@ app.post("/reset", function (req, res) {
 
 // ---------------------------------- LISTEN METHOD --------------------------------------
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-app.listen(process.env.PORT || 3000, function (res, req) {
+app.listen(port, function (res, req) {
   console.log("Server started on port 3000");
 });
