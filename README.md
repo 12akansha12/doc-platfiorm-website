@@ -3,7 +3,8 @@
  <img src="https://user-images.githubusercontent.com/58841158/153365007-ae1243ba-ddc8-4bb0-a78f-37a213902b5b.jpeg" alt="drawing" height="150" width="150"> 
 </p>
 
- <h1 align="center"> Doc Platform </h1>
+<a href="https://murmuring-earth-84458.herokuapp.com/"><h1 align="center"> Doc Platform</h1></a>
+
 
 <p align="center"> A doc platform where organisation can keep all work related docs in single place.</p>
 
