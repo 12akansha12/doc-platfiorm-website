@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/forgotpass.css">
+</head>
+<body>
+
+
+<div class="container">
+    <% if(offset === "off") { %>
+        <h2>To verify it's you..</h2>
+<p>Fill the form, if everything will be correct.. you will be able to reset your password</p>
+
+  <form action="/forgotpassword" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Email</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="fname" name="email" placeholder="Your name..">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="name" placeholder="Your name..">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Nick name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="nickname"  placeholder="Nickname" autocomplete="off">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">The thing you afraid of</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="secret" placeholder="The thing you afraid of" autocomplete="off">
+    </div>
+  </div>
+  
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+<% } else { %>
+    <h2>Reset your password</h2>
+  <form action="/reset" method="post">
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">New Password</label>
+        </div>
+        <div class="col-75">
+            <input type="password" name="new_password">
+        </div>
+      </div>
+
+      <input type="hidden" name="u_id" value="<%= u_id %>">
+      <!-- <input type="password"> -->
+      <br>
+        <div class="row">
+            <input type="submit" value="Reset">
+        </div>
+  </form>
+  <% } %>
+</div>
+
+</body>
+</html>
+
+

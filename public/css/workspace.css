@@ -40,13 +40,12 @@ body {
 .search-bar {
     font-family: Helvetica;
     font-size: 30px;
-    margin: 5px;
-    margin-left: 10px;
+    margin: 20px;
     color:rgb(90, 27, 163);
     font-weight: bold;
 }
 input[type=text] {
-    width: 200px;
+    width: 150px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
   }
@@ -74,6 +73,7 @@ textarea {
     margin: 20px;
 }
 
+
 .save-btn {
     display: inline-block;
 
@@ -84,7 +84,8 @@ textarea {
     padding: 10px;
     position: absolute;
     right: 10px;
-    width: 80px;
+    /* width: 80px; */
+    width: max-content;
     height: 50px;
     margin-top: 21px;
     border-radius: 15px;
@@ -125,7 +126,7 @@ button span {
     background-color: #7b38d8;
     font-family: Helvetica;
     font-size: 15px;
-    margin: 5px;
+    margin: 40px;
     padding: 10px;
     position: absolute;
     right: 100px;
@@ -166,5 +167,22 @@ li {
     text-align: center;
     transition: all 0.5s;
     left: 100px;
-    /* flex: 1; */
+    flex: 1;
+}
+
+.btn {
+  background-color: #7b38d8;
+  font-family: Helvetica;
+  font-size: 15px;
+  margin: 5px;
+  border-radius: 15px;
+  position: relative;
+  margin: 10px;
+  width: max-content;
+  height: 60px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  transition: all 0.5s;
+  left: 100px;
 }

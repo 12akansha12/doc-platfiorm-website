@@ -3,6 +3,8 @@ inputfile.addEventListener('change', saveFile);
 
 function saveFile() {
   const filepath = document.getElementById('input-file').value;
+  const wrkspc_id = document.getElementById('workspaceid').value;
+  const user_id = document.getElementById('user').value;
   console.log(filepath);
     let filename = "";
     for(let i=filepath.length-1; i>=0; i--) {
@@ -23,6 +25,8 @@ function saveFile() {
             var details = {
                 'filename': filename,
                 'filecontent': filecontent,
+                'workspace_id': wrkspc_id,
+                'user_id': user_id
             };
 
             var formBody = [];
@@ -35,7 +39,7 @@ function saveFile() {
 
             const option = {
                 method: "POST",
-                headers: {
+                headers:              {
                     "Content-Type": 'application/x-www-form-urlencoded;charset=UTF-8',
                 },
                 body: formBody
@@ -45,7 +49,7 @@ function saveFile() {
             // console.log(result);
         }
         saveFileAndContent();
-        window.location.href = "/workspace";
+        window.location.href = "/user/" + user_id + "/workspace/" + wrkspc_id;
     }
     
     fr.readAsText(this.files[0]);
@@ -55,3 +59,7 @@ const workspace = document.getElementById('workspace');
 workspace.addEventListener('click', function() {
     console.log(window.location.href);
 })
+
+function contact() {
+    window.location.href = "/";
+}
