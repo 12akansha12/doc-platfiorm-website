@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -10,7 +11,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.set("view-engine", 'ejs');
-mongoose.connect("mongodb+srv://raghavraj_27:RaghavRaj%402002@cluster0.ahmho.mongodb.net/docPlatformDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 
 const fileSchema = new mongoose.Schema({
   filename: String,
