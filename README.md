@@ -26,13 +26,13 @@
 ---
 ## Features
 
-- A firebase sign up and login enabled doc platform with forgot password feature.
+- A login and register page with security and password encryption enabled doc platform and forgot password feature.
 
-- A dashboard to display all your workspaces.
+- A dashboard to create and delete workspaces.
 
-- Users can edit documentation either by typing directly in the text area or by choosing a file from their pc and modifying necessary changes. 
+- Users can upload any notes/text files from their computer to any workspace. 
 
-- Admin review of all the documentations.
+- File deletion feature is provided in each workspace.
 
 
 ## Installation
@@ -57,12 +57,15 @@ once downloaded, go to the terminal, type the given below command
 ## Tech Stack
 
 - Front-End : 
-HTML(Basic skeleton used in form of EJS), CSS
+EJS, CSS, Bootstrap
 - Back-End : 
-NODEJS, Firebase, Firebase Realtime Database
+NodeJS
+- Database :
+MongoDB
 - Other tools and platforms : <br>
-i) Used Heroku for CI/CD deployment <br>
-ii) Balsamiq cloud tool to design pages
+  i) Used Heroku for CI/CD deployment <br>
+ ii) Atlas for hosting databse <br>
+iii) Balsamiq cloud tool to design pages
 
 ## Contributors:
 
